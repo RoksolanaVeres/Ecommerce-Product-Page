@@ -72,18 +72,52 @@
         </nav>
         <div class="header__purchase-info">
           <div class="cart-qty-container">
-            <img
-              src="/images/icon-cart.svg"
-              alt="cart-icon"
-              class="purchase__cart-icon"
-            />
-            <div class="purchase__qty">1</div>
+            <button class="button purchase__cart-button">
+              <img src="/images/icon-cart.svg" alt="cart-icon" />
+            </button>
+            <div class="purchase__qty"></div>
           </div>
+
           <img
             src="./images/image-avatar.png"
-            alt=""
+            alt="customer profile picture"
             class="purchase__avatar"
           />
+        </div>
+        <!-- cart order -->
+        <div class="cart-order__container">
+          <h3 class="cart-order__header">Cart</h3>
+          <div class="cart-order__divider"></div>
+          <div class="cart-order__details-container">
+            <div class="card-order__details-empty">
+              <p>Your cart is empty.</p>
+            </div>
+            <div class="card-order__details-full">
+              <div class="cart-order__details">
+                <img
+                  src="./images/image-product-1-thumbnail.jpg"
+                  alt="order image"
+                  class="cart-order__details-img"
+                />
+                <div class="cart-order__details-text">
+                  <p class="cart-order__details-name">
+                    Fall Limited Edition Sneakers
+                  </p>
+                  <p class="cart-order__calculations">
+                    <span class="cart-order__price"></span> x
+                    <span class="cart-order__qty"></span>
+                    <span class="cart-order__total-sum"></span>
+                  </p>
+                </div>
+                <button class="button cart-order__delete-button">
+                  <img src="./images/icon-delete.svg" alt="" />
+                </button>
+              </div>
+              <button class="button cart-button cart-order__checkout-btn">
+                Checkout
+              </button>
+            </div>
+          </div>
         </div>
       </header>
       <!-- product container -->
@@ -164,7 +198,7 @@
               </button>
             </div>
             <!-- add to cart button -->
-            <button class="button add-to-cart-button">
+            <button class="button cart-button add-to-cart-button">
               <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
