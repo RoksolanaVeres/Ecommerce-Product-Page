@@ -106,6 +106,24 @@ body {
   opacity: 0.6;
 }
 
+.overlay__close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: transparent;
+  top: -40px;
+  right: 0;
+}
+
+.overlay__close-icon {
+  color: white;
+}
+
+.overlay__close-icon:hover {
+  color: var(--orange);
+}
+
 .overlay__prev-next-buttons-container {
   position: absolute;
   top: 50%;
@@ -579,5 +597,9 @@ body {
 
   .product__image--main {
     border-radius: 0;
+  }
+
+  .header__purchase-info {
+    gap: 1.5rem;
   }
 }

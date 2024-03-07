@@ -3,6 +3,7 @@
 // buttons
 const mainPrevButton = document.querySelector(".prev-button");
 const mainNextButton = document.querySelector(".next-button");
+const overlayCloseButton = document.querySelector(".overlay__close-button");
 const overlayPrevButton = document.querySelector(".overlay__prev-button");
 const overlayNextButton = document.querySelector(".overlay__next-button");
 const qtyButtonPlus = document.querySelector(".qty-button--plus");
@@ -47,13 +48,20 @@ const thumbnailImagesOverlay = document.querySelectorAll(".overlay__thumbnail");
 // ===CONSTANTS===
 const MAX_IMG_NUM = 4;
 const PRICE = 125;
+const STORAGE_KEY = "itemsInCart";
 
 // ===VARIABLES===
 let currentImage = 1;
-let productsInCartNumber = 0;
+let productsInCartNumber = JSON.parse(localStorage.getItem(STORAGE_KEY)) || 0;
 let inputQty = 0;
 
+console.log(productsInCartNumber);
+
 // ===FUNCTIONS===
+function saveItemsinLocalStorage() {
+  localStorage.setItem(STORAGE_KEY, productsInCartNumber);
+}
+
 function showCurrentImage() {
   mainImage.setAttribute("src", `./images/image-product-${currentImage}.jpg`);
   overlayMainPicContainer.style.backgroundImage = `url(
@@ -175,24 +183,33 @@ function showItemsQtyLabel() {
 
 function showCartContent() {
   if (productsInCartNumber !== 0) {
-    emptyCartContainer.classList.add("display-none");
-    emptyCartContainer.classList.remove("display-flex");
-    filledCartContainer.classList.add("display-block");
-    filledCartContainer.classList.remove("display-none");
+    emptyCartContainer.style.display = "none";
+    filledCartContainer.style.display = "block";
     cartTotalPriceContainer.textContent = `${PRICE * productsInCartNumber},00`;
     cartPricePerItemContainer.textContent = `${PRICE},00`;
     cartQtyContainer.textContent = productsInCartNumber;
   } else {
-    emptyCartContainer.classList.remove("display-none");
-    emptyCartContainer.classList.add("display-flex");
-    filledCartContainer.classList.remove("display-block");
-    filledCartContainer.classList.add("display-none");
+    emptyCartContainer.style.display = "flex";
+    filledCartContainer.style.display = "none";
+    emptyCartContainer.innerHTML = "<p>Your cart is empty.</p>";
   }
 }
 
-function addItemsToCart() {
-  productsInCartNumber = inputQty;
+function clearCart() {
+  productsInCartNumber = 0;
+  inputQty = 0;
+  saveItemsinLocalStorage();
+  showCartContent();
   showItemsQtyLabel();
+  showInputQtyNumber();
+}
+
+function addItemsToCart() {
+  productsInCartNumber = productsInCartNumber + inputQty;
+  inputQty = 0;
+  saveItemsinLocalStorage();
+  showItemsQtyLabel();
+  showInputQtyNumber();
   showCartContent();
 }
 
@@ -201,14 +218,10 @@ function handleCartButtonClick() {
   showCartContent();
 }
 
-function handleCheckout() {}
-
-function clearCart() {
-  productsInCartNumber = 0;
-  inputQty = 0;
-  showCartContent();
-  showItemsQtyLabel();
-  showInputQtyNumber();
+function handleCheckout() {
+  clearCart();
+  emptyCartContainer.innerHTML =
+    "<p>Thank you for your order. Our manager will contact you as soon as possible!</p>";
 }
 
 // EVENT LISTENERS
@@ -218,6 +231,9 @@ menuButton.addEventListener("click", handleMenu);
 mainNextButton.addEventListener("click", showNextImage);
 mainPrevButton.addEventListener("click", showPreviousImage);
 
+overlayCloseButton.addEventListener("click", () => {
+  overlay.style.display = "none";
+});
 overlayNextButton.addEventListener("click", showNextImage);
 overlayPrevButton.addEventListener("click", showPreviousImage);
 
@@ -257,8 +273,8 @@ overlay.addEventListener("click", (event) => {
 
 // INIT
 function init() {
-  cartOrderContainer.classList.add("display-none");
   showItemsQtyLabel();
+  cartOrderContainer.classList.add("display-none");
 }
 
 init();
