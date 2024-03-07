@@ -30,6 +30,7 @@ body {
   position: relative;
 }
 
+/* display styles */
 .display-block {
   display: block;
 }
@@ -40,6 +41,10 @@ body {
 
 .display-flex {
   display: flex;
+}
+
+.display-grid {
+  display: grid;
 }
 
 /* buttons */
