@@ -20,12 +20,7 @@
         <div class="overlay__main-pic-container">
           <!-- close button -->
           <button class="button overlay__close-button">
-            <svg
-              class="overlay__close-icon"
-              width="14"
-              height="15"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg class="overlay__close-icon" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
                 fill="currentColor"
@@ -36,10 +31,26 @@
           <!-- navigation buttons -->
           <div class="overlay__prev-next-buttons-container">
             <div class="change-img-button overlay__prev-button">
-              <img src="./images/icon-previous.svg" alt="" />
+              <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 1 3 9l8 8"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </div>
             <div class="change-img-button overlay__next-button">
-              <img src="./images/icon-next.svg" alt="" />
+              <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m2 1 8 8-8 8"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -95,12 +106,13 @@
             </button>
             <div class="purchase__qty"></div>
           </div>
-
-          <img
-            src="./images/image-avatar.png"
-            alt="customer profile picture"
-            class="purchase__avatar"
-          />
+          <div class="purchase__avatar-container">
+            <img
+              src="./images/image-avatar.png"
+              alt="customer profile picture"
+              class="purchase__avatar"
+            />
+          </div>
         </div>
         <!-- cart order -->
         <div class="cart-order__container">
