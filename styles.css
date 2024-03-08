@@ -106,11 +106,8 @@ body {
   width: 90px;
   border-radius: 10px;
   cursor: pointer;
-}
-
-.product__image--thumbnail-selected {
-  outline: 3px solid var(--orange);
-  opacity: 0.6;
+  transition: all 0.4s ease-in-out;
+  outline: 3px solid transparent;
 }
 
 .overlay__close-button {
@@ -335,6 +332,8 @@ body {
   height: 52px;
   width: 52px;
   border-radius: 50%;
+  outline: 2px solid transparent;
+  transition: all 0.4s ease-in-out;
 }
 
 .purchase__avatar-container:hover {
@@ -381,8 +380,15 @@ body {
 }
 
 .product__image--thumbnail {
+  outline: 3px solid transparent;
   width: 20%;
   border-radius: 1rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.product__image--thumbnail-selected {
+  outline: 3px solid var(--orange);
+  opacity: 0.6;
 }
 
 .product__image--thumbnail:hover,
