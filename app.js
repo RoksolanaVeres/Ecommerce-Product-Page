@@ -154,6 +154,7 @@ function handleSelectedThumbnail(thumbnail) {
 
 // Menu functions
 function openMenu() {
+  cartOrderContainer.classList.add("display-none");
   overlay.style.display = "block";
   overlayPicsContainer.style.display = "none";
   headerLinks.forEach((link) => {
