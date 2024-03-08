@@ -194,7 +194,6 @@ body {
 }
 
 /* ==== */
-
 .header__logo {
   height: 20px;
   width: 140px;
@@ -551,13 +550,13 @@ body {
   .header__nav-mobile--open {
     padding-top: 95px;
     display: flex;
+    flex-direction: column;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 70%;
+    width: 70vw;
     background: white;
-    flex-direction: column;
     gap: 4%;
     z-index: 20;
   }
@@ -568,6 +567,33 @@ body {
     padding-left: 25px;
   }
 
+  /* Slide in animation with delay for each nav item */
+  .slide-in-collections {
+    animation: slide-in 0.3s linear 0.1s both;
+  }
+  .slide-in-men {
+    animation: slide-in 0.3s linear 0.2s both;
+  }
+  .slide-in-women {
+    animation: slide-in 0.3s linear 0.3s both;
+  }
+  .slide-in-about {
+    animation: slide-in 0.3s linear 0.4s both;
+  }
+  .slide-in-contact {
+    animation: slide-in 0.3s linear 0.5s both;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* product container */
   .product-container {
     grid-template-columns: 1fr;
   }

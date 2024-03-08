@@ -16,12 +16,17 @@ const cartDeleteButton = document.querySelector(".cart-order__delete-button");
 const checkoutButton = document.querySelector(".cart-order__checkout-btn");
 
 // display elements
-const inputQtyNumberContainer = document.querySelector(".qty-number");
+
+// header
 const headerNavigation = document.querySelector(".header__nav");
 const headerLinks = headerNavigation.querySelectorAll(".nav__link");
-const thumbnailsContainer = document.querySelector(
-  ".product__thumbnail-images-container"
-);
+// mobile menu navigation links
+const collectionsNavLink = document.querySelector(".nav__link-collections");
+const menNavLink = document.querySelector(".nav__link-men");
+const womenNavLink = document.querySelector(".nav__link-women");
+const aboutNavLink = document.querySelector(".nav__link-about");
+const contactNavLink = document.querySelector(".nav__link-contact");
+// cart
 const cartOrderContainer = document.querySelector(".cart-order__container");
 const emptyCartContainer = document.querySelector(".card-order__details-empty");
 const filledCartContainer = document.querySelector(".card-order__details-full");
@@ -30,20 +35,23 @@ const cartTotalPriceContainer = document.querySelector(
   ".cart-order__total-sum"
 );
 const cartQtyContainer = document.querySelector(".cart-order__qty");
-
+// quantity input
+const inputQtyNumberContainer = document.querySelector(".qty-number");
 // overlay
 const overlay = document.querySelector(".overlay");
 const overlayPicsContainer = document.querySelector(".overlay__pics-container");
 const overlayMainPicContainer = document.querySelector(
   ".overlay__main-pic-container"
 );
-
 // images
 const mainImage = document.querySelector(".product__image--main");
 const thumbnailImagesMain = document.querySelectorAll(
   ".product__image--thumbnail"
 );
 const thumbnailImagesOverlay = document.querySelectorAll(".overlay__thumbnail");
+const thumbnailsContainer = document.querySelector(
+  ".product__thumbnail-images-container"
+);
 
 // ===CONSTANTS===
 const MAX_IMG_NUM = 4;
@@ -146,16 +154,20 @@ function handleSelectedThumbnail(thumbnail) {
 
 // Menu functions
 function openMenu() {
-  menuButton.setAttribute("src", "./images/icon-close.svg");
   overlay.style.display = "block";
   overlayPicsContainer.style.display = "none";
   headerLinks.forEach((link) => {
     link.classList.add("nav__link--mobile");
   });
+  // animate in nav items
+  collectionsNavLink.classList.add("slide-in-collections");
+  menNavLink.classList.add("slide-in-men");
+  womenNavLink.classList.add("slide-in-women");
+  aboutNavLink.classList.add("slide-in-about");
+  contactNavLink.classList.add("slide-in-contact");
 }
 
 function closeMenu() {
-  menuButton.setAttribute("src", "./images/icon-menu.svg");
   overlay.style.display = "none";
   headerLinks.forEach((link) => {
     link.classList.remove("nav__link--mobile");
