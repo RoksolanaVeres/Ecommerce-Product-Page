@@ -86,12 +86,16 @@
     <!-- page container -->
     <div class="container">
       <header class="header">
-        <img
-          src="./images/icon-menu.svg"
-          alt="menu-icon"
-          class="header__menu-icon"
-        />
+        <!-- header menu icon -->
+        <div class="header__menu-icon">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+
+        <!-- logo -->
         <img src="./images/logo.svg" alt="logo" class="header__logo" />
+        <!-- header navigation -->
         <nav class="header__nav">
           <a href="#" class="nav__link">Collections</a>
           <a href="#" class="nav__link">Men</a>
@@ -99,6 +103,7 @@
           <a href="#" class="nav__link">About</a>
           <a href="#" class="nav__link">Contact</a>
         </nav>
+        <!-- cart + avatar container -->
         <div class="header__purchase-info">
           <div class="cart-qty-container">
             <button class="button purchase__cart-button">
@@ -115,7 +120,7 @@
           </div>
         </div>
         <!-- cart order -->
-        <div class="cart-order__container">
+        <div class="cart-order__container display-none">
           <h3 class="cart-order__header">Cart</h3>
           <div class="cart-order__divider"></div>
           <div class="cart-order__details-container">

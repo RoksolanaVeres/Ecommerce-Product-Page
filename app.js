@@ -55,8 +55,6 @@ let currentImage = 1;
 let productsInCartNumber = JSON.parse(localStorage.getItem(STORAGE_KEY)) || 0;
 let inputQty = 0;
 
-console.log(productsInCartNumber);
-
 // ===FUNCTIONS===
 function saveItemsinLocalStorage() {
   localStorage.setItem(STORAGE_KEY, productsInCartNumber);
@@ -165,6 +163,7 @@ function closeMenu() {
 }
 
 function handleMenu() {
+  menuButton.classList.toggle("change");
   headerNavigation.classList.toggle("header__nav-mobile--open");
   headerNavigation.classList.contains("header__nav-mobile--open")
     ? openMenu()
@@ -274,7 +273,6 @@ overlay.addEventListener("click", (event) => {
 // INIT
 function init() {
   showItemsQtyLabel();
-  cartOrderContainer.classList.add("display-none");
 }
 
 init();
