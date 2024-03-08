@@ -154,7 +154,7 @@ body {
 /* header */
 .header {
   width: 100%;
-  padding: 2.5% 0;
+  padding: 50px 0;
   display: flex;
   gap: 5%;
   justify-content: space-between;
@@ -210,6 +210,27 @@ body {
   color: var(--dark-grayish-blue);
   font-family: "Kumbh Sans", sans-serif;
   font-size: 1.6rem;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+
+.nav__link:hover {
+  color: black;
+}
+
+.nav__link::before {
+  content: "";
+  background-color: var(--orange);
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  top: 84px;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.nav__link:hover::before {
+  opacity: 1;
 }
 
 .header__purchase-info {
@@ -536,6 +557,7 @@ body {
 @media (max-width: 750px) {
   .header {
     border: none;
+    padding: 5% 0 0 0;
   }
 
   .header__menu-icon {
@@ -565,6 +587,11 @@ body {
     color: black;
     font-weight: 700;
     padding-left: 25px;
+    width: fit-content;
+  }
+
+  .nav__link::before {
+    top: 30px;
   }
 
   /* Slide in animation with delay for each nav item */
