@@ -149,6 +149,7 @@ body {
   width: 80%;
   max-width: 1120px;
   margin: 0 auto;
+  position: relative;
 }
 
 /* header */
@@ -267,7 +268,7 @@ body {
 /* cart order */
 .cart-order__container {
   position: absolute;
-  top: 84px;
+  top: 97px;
   right: 60px;
   z-index: 20;
   background-color: white;
