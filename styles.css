@@ -254,7 +254,7 @@ body {
   color: var(--orange);
 }
 
-.purchase__cart-button .purchase__qty {
+.purchase__qty {
   justify-content: center;
   align-items: center;
   position: absolute;
