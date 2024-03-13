@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- [Frontend Mentor solution](https://www.frontendmentor.io/solutions/advice-generator-app-using-fetch-0xl0lB37p_)
+- [Frontend Mentor solution](https://www.frontendmentor.io/solutions/responsive-ecommerce-product-page-built-with-vanilla-css-and-js-qicTbOA1dL)
 - [GitHub repo](https://github.com/RoksolanaVeres/Ecommerce-Product-Page)
 - [Live Site](https://ecommerce-product-page-eight-blue.vercel.app/)
 
